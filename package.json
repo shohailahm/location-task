@@ -3,28 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "vite --open",
+    "preview": "vite preview --open --port 8080",
+    "build": "vite build --out-dir dist",
+    "start": "node server.js",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "dependencies": {
+    "@heroicons/vue": "^1.0.5",
+    "@vitejs/plugin-vue": "^1.10.1",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "expo-dev-client": "^0.6.3",
+    "express": "^4.17.1",
+    "react-native-date-picker": "^4.1.3",
+    "sass": "^1.44.0",
+    "serve-static": "^1.14.1",
+    "vite": "^2.6.14",
+    "vite-plugin-vue2": "^1.9.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vue-toasted": "^1.1.28",
+    "vue-toastification": "^2.0.0-rc.5",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.23",
     "@vue/eslint-config-prettier": "^6.0.0",
+    "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1"
+    "postcss": "^8.4.4",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.2.19"
   }
 }
