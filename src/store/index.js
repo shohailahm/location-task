@@ -29,7 +29,7 @@ export default createStore({
           JSON.stringify(loginData),
           {
             transformRequest: (data, headers) => {
-              delete headers.common["X-XSRF-TOKEN"];
+              delete headers["X-XSRF-TOKEN"];
               return data;
             },
             headers: {
