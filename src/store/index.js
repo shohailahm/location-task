@@ -28,6 +28,10 @@ export default createStore({
           "/tokens",
           JSON.stringify(loginData),
           {
+            transformRequest: (data, headers) => {
+              delete headers.common["X-XSRF-TOKEN"];
+              return data;
+            },
             headers: {
               "Content-Type": "application/json",
             },
@@ -53,6 +57,6 @@ export default createStore({
     },
   },
   modules: {
-    task
+    task,
   },
 });
