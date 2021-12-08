@@ -37,9 +37,9 @@ export default createStore({
         //     },
         //   }
         // );
-        // localStorage.setItem("accessToken", response.data.token);
-        // commit("loginStop", null);
-        // commit("updateAccessToken", response.data.token);
+        localStorage.setItem("accessToken", 'token');
+        commit("loginStop", null);
+        commit("updateAccessToken", 'token');
         router.push("/");
         //return response;
       } catch (error) {
