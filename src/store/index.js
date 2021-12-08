@@ -24,24 +24,24 @@ export default createStore({
   actions: {
     async doLogin({ commit }, loginData) {
       try {
-        const response = await axios.post(
-          "/tokens",
-          JSON.stringify(loginData),
-          {
-            transformRequest: (data, headers) => {
-              delete headers["X-XSRF-TOKEN"];
-              return data;
-            },
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        localStorage.setItem("accessToken", response.data.token);
-        commit("loginStop", null);
-        commit("updateAccessToken", response.data.token);
+        // const response = await axios.post(
+        //   "/tokens",
+        //   JSON.stringify(loginData),
+        //   {
+        //     transformRequest: (data, headers) => {
+        //       delete headers["X-XSRF-TOKEN"];
+        //       return data;
+        //     },
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //   }
+        // );
+        // localStorage.setItem("accessToken", response.data.token);
+        // commit("loginStop", null);
+        // commit("updateAccessToken", response.data.token);
         router.push("/");
-        return response;
+        //return response;
       } catch (error) {
         commit("loginStop", error.response.data.error);
         commit("updateAccessToken", null);
